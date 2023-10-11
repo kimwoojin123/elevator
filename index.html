@@ -27,7 +27,7 @@
     border : 1px solid black;
   }
   #control{
-    width : 20vw;
+    width : 21vw;
     height: 60vh;
     border : 1px solid black;
   }
@@ -39,6 +39,23 @@
     left : 520px;
     background-color: red;
   }
+  #numpad{
+    width:21vw;
+    height:40vh;
+    display:flex;
+    flex-wrap: wrap;
+  }
+  #numpad > button {
+    border : 1px solid black;
+    width: 7vw;
+    height:14vh;
+    text-align: center;
+    line-height: 14vh;
+    cursor: pointer;
+  }
+  #numpad :hover {
+    background-color: white;
+  }
 </style>
 </head>
 <body>
@@ -46,7 +63,17 @@
     <div id="elevator"></div>
   </div>
   <div id="control">
-    <div id="numpad"></div>
+    <div id="numpad">
+      <button id="7F">7</button>
+      <button id="8F">8</button>
+      <button id="9F">9</button>
+      <button id="4F">4</button>
+      <button id="5F">5</button>
+      <button id="6F">6</button>
+      <button id="1F">1</button>
+      <button id="2F">2</button>
+      <button id="3F">3</button>
+    </div>
     <div>
       <div id="open"></div>
       <div id="close"></div>
@@ -60,6 +87,46 @@
     let createLi = document.createElement('li');
     root.appendChild(createLi)
   }
+
+  let elevator = document.getElementById('elevator');
+
+  
+
+
+
+
+  let pos =855;
+  let f3 = document.getElementById('3F');
+  let f5 = document.getElementById('5F');
+  
+  
+  f3.addEventListener('click', ()=>{
+    let interval = setInterval(up3, 10)
+    function up3(){
+      if(pos>641){  
+      elevator.style.top = pos + "px"
+        pos--
+      } else {
+        elevator.style.top = pos + 1 + "px"
+        pos++
+      }
+        if(pos === 641){
+          clearInterval(interval)
+        }
+      }
+    })
+
+  
+  f5.addEventListener('click', ()=>{
+    let interval = setInterval(up5, 10)
+       function up5(){
+        elevator.style.top = pos + "px"
+        pos--
+        if(pos === 427){
+          clearInterval(interval)
+        }
+      }
+    })
 
 
 </script>
