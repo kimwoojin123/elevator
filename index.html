@@ -30,6 +30,9 @@
     width : 21vw;
     height: 60vh;
     border : 1px solid black;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   #elevator {
     position : absolute;
@@ -52,10 +55,43 @@
     text-align: center;
     line-height: 14vh;
     cursor: pointer;
+    font-size: 20px;
   }
   #numpad :hover {
     background-color: white;
   }
+
+
+  #control > div:nth-child(2){
+    height:20vh;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  #left{
+    width:5vw;
+    height:10vh;
+    background-color: lightgrey;
+    text-align: center;
+    line-height: 10vh;
+    font-size: 48px;
+  }
+  #left:hover{
+    background-color: gray;
+    cursor: pointer;
+  }
+  #right{
+    width:5vw;
+    height:10vh;
+    background-color: lightgrey;
+    text-align: center;
+    line-height: 10vh;
+    font-size: 48px;
+  }
+  #right:hover{
+    background-color: gray;
+    cursor: pointer;
 </style>
 </head>
 <body>
@@ -75,8 +111,8 @@
       <button id="3F">3</button>
     </div>
     <div>
-      <div id="open"></div>
-      <div id="close"></div>
+      <div id="left">〈</div>
+      <div id="right">〉</div>
     </div>
   </div>
 <script>
@@ -87,15 +123,13 @@
     let createLi = document.createElement('li');
     root.appendChild(createLi)
   }
-
-  let elevator = document.getElementById('elevator');
-
   
-
-
-
-
+  let elevator = document.getElementById('elevator');
+  
+  
+  
   let pos =855;
+  let posL = 520;
   let f1 = document.getElementById('1F');
   let f2 = document.getElementById('2F');
   let f3 = document.getElementById('3F');
@@ -105,8 +139,9 @@
   let f7 = document.getElementById('7F');
   let f8 = document.getElementById('8F');
   let f9 = document.getElementById('9F');
+  let moveLeft = document.getElementById('left');
+  let moveRight = document.getElementById('right');
   
-
 
   f1.addEventListener('click', ()=>{
     let interval = setInterval(up, 1)
@@ -123,9 +158,6 @@
         }
       }
     })
-
-
-
 
   
   f2.addEventListener('click', ()=>{
@@ -144,8 +176,6 @@
       }
     })
 
-
-
   f3.addEventListener('click', ()=>{
     let interval = setInterval(up, 1)
     function up(){
@@ -162,8 +192,6 @@
       }
     })
 
-    
-
   f4.addEventListener('click', ()=>{
     let interval = setInterval(up, 1)
     function up(){
@@ -176,9 +204,8 @@
       }
         if(pos === 535){
           clearInterval(interval)
-        }
       }
-    })
+    }})
 
   f5.addEventListener('click', ()=>{
     let interval = setInterval(up, 1)
@@ -259,6 +286,10 @@
         }
       }
     })
+
+
+
+
 </script>
 </body>
 </html>
