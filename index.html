@@ -92,6 +92,7 @@
   #right:hover{
     background-color: gray;
     cursor: pointer;
+  }
 </style>
 </head>
 <body>
@@ -287,7 +288,38 @@
       }
     })
 
-
+    moveLeft.addEventListener('click',()=>{
+      let interval = setInterval(left,1)
+      function left(){
+        elevator.style.left = posL + "px"
+        posL--
+        if(posL===550){
+          clearInterval(interval)}
+        if(posL===720){
+          clearInterval(interval)}
+        if(posL===350){
+          clearInterval(interval)}
+        if(posL===187){
+          clearInterval(interval)
+        }
+      }
+    })
+    moveRight.addEventListener('click', ()=> {
+      let interval = setInterval(right,1)
+      function right(){
+        elevator.style.left = posL + "px"
+        posL++
+        if(posL===550){
+          clearInterval(interval)}
+        if(posL===350){
+          clearInterval(interval)}
+        if(posL===720){
+          clearInterval(interval)}
+        if(posL===879){
+          clearInterval(interval)
+        }
+      }
+    })
 
 
 </script>
