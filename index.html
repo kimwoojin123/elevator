@@ -12,6 +12,7 @@
     height:100vh;
     justify-content: space-around;
     align-items: end;
+
   }
   #root{
     width:40vw;
@@ -19,10 +20,24 @@
     border : 1px solid black;
   }
 
+  #root > li {
+    width:40vw;
+    height:11.1vh;
+    list-style: none;
+    border : 1px solid black;
+  }
   #control{
     width : 20vw;
     height: 60vh;
     border : 1px solid black;
+  }
+  #elevator {
+    position : absolute;
+    width:4vw;
+    height:11.1vh;
+    top:855px;
+    left : 520px;
+    background-color: red;
   }
 </style>
 </head>
@@ -39,6 +54,12 @@
   </div>
 <script>
   
+  let root = document.getElementById('root')
+
+  for(let i = 0; i<9; i++){
+    let createLi = document.createElement('li');
+    root.appendChild(createLi)
+  }
 
 
 </script>
