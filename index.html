@@ -96,13 +96,59 @@
 
 
   let pos =855;
+  let f1 = document.getElementById('1F');
+  let f2 = document.getElementById('2F');
   let f3 = document.getElementById('3F');
+  let f4 = document.getElementById('4F');
   let f5 = document.getElementById('5F');
+  let f6 = document.getElementById('6F');
+  let f7 = document.getElementById('7F');
+  let f8 = document.getElementById('8F');
+  let f9 = document.getElementById('9F');
   
+
+
+  f1.addEventListener('click', ()=>{
+    let interval = setInterval(up, 1)
+    function up(){
+      if(pos>855){  
+      elevator.style.top = pos + "px"
+        pos--
+      } else {
+        elevator.style.top = pos + 1 + "px"
+        pos++
+      }
+        if(pos === 855){
+          clearInterval(interval)
+        }
+      }
+    })
+
+
+
+
   
+  f2.addEventListener('click', ()=>{
+    let interval = setInterval(up, 1)
+    function up(){
+      if(pos>748){  
+      elevator.style.top = pos + "px"
+        pos--
+      } else {
+        elevator.style.top = pos + 1 + "px"
+        pos++
+      }
+        if(pos === 748){
+          clearInterval(interval)
+        }
+      }
+    })
+
+
+
   f3.addEventListener('click', ()=>{
-    let interval = setInterval(up3, 10)
-    function up3(){
+    let interval = setInterval(up, 1)
+    function up(){
       if(pos>641){  
       elevator.style.top = pos + "px"
         pos--
@@ -116,19 +162,103 @@
       }
     })
 
-  
+    
+
+  f4.addEventListener('click', ()=>{
+    let interval = setInterval(up, 1)
+    function up(){
+      if(pos>535){  
+      elevator.style.top = pos + "px"
+        pos--
+      } else {
+        elevator.style.top = pos + 1 + "px"
+        pos++
+      }
+        if(pos === 535){
+          clearInterval(interval)
+        }
+      }
+    })
+
   f5.addEventListener('click', ()=>{
-    let interval = setInterval(up5, 10)
-       function up5(){
+    let interval = setInterval(up, 1)
+    function up(){
+        if(pos>427){   
         elevator.style.top = pos + "px"
         pos--
+      } else {
+        elevator.style.top = pos + 1 + "px"
+        pos++
+      }
         if(pos === 427){
           clearInterval(interval)
         }
       }
     })
 
+  f6.addEventListener('click', ()=>{
+    let interval = setInterval(up, 1)
+    function up(){
+      if(pos>321){  
+      elevator.style.top = pos + "px"
+        pos--
+      } else {
+        elevator.style.top = pos + 1 + "px"
+        pos++
+      }
+        if(pos === 321){
+          clearInterval(interval)
+        }
+      }
+    })
 
+  f7.addEventListener('click', ()=>{
+    let interval = setInterval(up, 1)
+    function up(){
+      if(pos>214){  
+      elevator.style.top = pos + "px"
+        pos--
+      } else {
+        elevator.style.top = pos + 1 + "px"
+        pos++
+      }
+        if(pos === 214){
+          clearInterval(interval)
+        }
+      }
+    })
+
+  f8.addEventListener('click', ()=>{
+    let interval = setInterval(up, 1)
+    function up(){
+      if(pos>107){  
+      elevator.style.top = pos + "px"
+        pos--
+      } else {
+        elevator.style.top = pos + 1 + "px"
+        pos++
+      }
+        if(pos === 107){
+          clearInterval(interval)
+        }
+      }
+    })
+
+  f9.addEventListener('click', ()=>{
+    let interval = setInterval(up, 1)
+    function up(){
+      if(pos>0){  
+      elevator.style.top = pos + "px"
+        pos--
+      } else {
+        elevator.style.top = pos + 1 + "px"
+        pos++
+      }
+        if(pos === 0){
+          clearInterval(interval)
+        }
+      }
+    })
 </script>
 </body>
 </html>
